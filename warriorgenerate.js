@@ -45,5 +45,40 @@ function generatesinglewarrior() {
     }
   }
 }
+document.querySelector("#generatebtn").addEventListener("click", function () {
+  let newwarrior = generatesinglewarrior();
+  //warriorcard
+  let warriorcard = document.createElement("div");
+  warriorcard.style.border = "solid blue";
+  warriorcard.style.width = "200px";
+  warriorcard.style.height = "200px";
+  warriorcard.style.display = "inline-block";
+  //warriorpower
+  let warriorpwr = document.createElement("span");
+  warriorpwr.innerText = `Power: ${newwarrior.power}`;
+  //warriorlevel
+  let warriorlvl = document.createElement("span");
+  warriorlvl.innerText = ` Level:${newwarrior.level}`;
+  //warrior damage
+  let warriordmg = document.createElement("span");
+  warriordmg.innerText = `Damage: ${newwarrior.damage}`;
+  //warrior type
+  let warriortype = document.createElement("span");
+  warriortype.innerText = `Type ${newwarrior.type}`;
+  //image
+  let warriorimg = document.createElement("img");
+  warriorimg.src = newwarrior.image;
+  warriorimg.style.height = "100px";
+  warriorimg.style.width = "100px";
+
+  warriorcard.append(warriorimg);
+  warriorcard.append(warriortype);
+  warriorcard.append(warriordmg);
+  warriorcard.append(warriorlvl);
+  warriorcard.append(warriorpwr);
+  document.body.appendChild(warriorcard);
+});
 const result = warriorgenerate(50);
 console.log(result);
+
+("");
