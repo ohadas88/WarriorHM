@@ -80,3 +80,5 @@ document.querySelector("#generatebtn").addEventListener("click", function () {
 });
 const result = warriorgenerate(50);
 console.log(result);
+
+("");
